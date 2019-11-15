@@ -44,13 +44,22 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		/* Hier auf Grund der vorhanden Werte entscheiden
-		 * welche Methode unten aufgerufen werden muss.
-		 */
+
+		if (spannung != 0.0 && strom != 0.0){
+			pAusUundI(spannung, strom);
+		}
+		if (widerstand != 0.0 && strom != 0.0){
+			pAusRundI(widerstand, strom);
+		}
+		if (spannung != 0.0 && widerstand != 0.0){
+			pAusUundR(spannung, widerstand);
+		}
+
+
+
 	}
-	
-	/* Hier die Methoden mit den Formlen hinzufügen
-	 */
+
+
 	public double pAusUundI(double u, double i) {
 		return u*i;
 	}
