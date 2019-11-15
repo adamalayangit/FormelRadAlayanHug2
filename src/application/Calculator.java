@@ -48,31 +48,40 @@ public class Calculator {
 		if (spannung != 0.0 && strom != 0.0){
 			pAusUundI(spannung, strom);
 		}
-		if (widerstand != 0.0 && strom != 0.0){
+		else if (widerstand != 0.0 && strom != 0.0){
 			pAusRundI(widerstand, strom);
 		}
-		if (spannung != 0.0 && widerstand != 0.0){
+		else if (spannung != 0.0 && widerstand != 0.0){
 			pAusUundR(spannung, widerstand);
 		}
 
-		if (widerstand != 0.0 && strom != 0.0){
+		else if (widerstand != 0.0 && strom != 0.0){
 			uAusRundI(widerstand, strom);
 		}
-		if (leistung != 0.0 && strom != 0.0){
+		else if (leistung != 0.0 && strom != 0.0){
 			uAusPundI(leistung, strom);
 		}
-		if (leistung != 0.0 && widerstand != 0.0){
+		else if (leistung != 0.0 && widerstand != 0.0){
 			uAusPundR(leistung, widerstand);
 		}
 
-		if (leistung != 0.0 && widerstand != 0.0){
+		else if (leistung != 0.0 && widerstand != 0.0){
 			iAusPundR(leistung, widerstand);
 		}
-		if (leistung != 0.0 && spannung != 0.0){
+		else if (leistung != 0.0 && spannung != 0.0){
 			iAusPundU(leistung, spannung);
 		}
-		if (spannung != 0.0 && widerstand != 0.0){
+		else if (spannung != 0.0 && widerstand != 0.0){
 			iAusUundR(spannung, widerstand);
+		}
+		else if (spannung != 0.0 && strom != 0.0){
+			rAusUundI(spannung, strom);
+		}
+		else if (leistung != 0.0 && strom != 0.0){
+			rAusPundI(leistung, strom);
+		}
+		else if (spannung != 0.0 && leistung != 0.0){
+			rAusUundP(spannung,leistung);
 		}
 	}
 
