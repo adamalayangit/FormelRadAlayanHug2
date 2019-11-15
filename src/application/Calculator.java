@@ -65,8 +65,15 @@ public class Calculator {
 			uAusPundR(leistung, widerstand);
 		}
 
-		
-
+		if (leistung != 0.0 && widerstand != 0.0){
+			iAusPundR(leistung, widerstand);
+		}
+		if (leistung != 0.0 && spannung != 0.0){
+			iAusPundU(leistung, spannung);
+		}
+		if (spannung != 0.0 && widerstand != 0.0){
+			iAusUundR(spannung, widerstand);
+		}
 	}
 
 
