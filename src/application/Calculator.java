@@ -45,43 +45,9 @@ public class Calculator {
 
 	public void calculate() {
 
-		if (spannung != 0.0 && strom != 0.0){
-			pAusUundI(spannung, strom);
-		}
-		else if (widerstand != 0.0 && strom != 0.0){
-			pAusRundI(widerstand, strom);
-		}
-		else if (spannung != 0.0 && widerstand != 0.0){
-			pAusUundR(spannung, widerstand);
-		}
-
-		else if (widerstand != 0.0 && strom != 0.0){
-			uAusRundI(widerstand, strom);
-		}
-		else if (leistung != 0.0 && strom != 0.0){
-			uAusPundI(leistung, strom);
-		}
-		else if (leistung != 0.0 && widerstand != 0.0){
-			uAusPundR(leistung, widerstand);
-		}
-
-		else if (leistung != 0.0 && widerstand != 0.0){
-			iAusPundR(leistung, widerstand);
-		}
-		else if (leistung != 0.0 && spannung != 0.0){
-			iAusPundU(leistung, spannung);
-		}
-		else if (spannung != 0.0 && widerstand != 0.0){
-			iAusUundR(spannung, widerstand);
-		}
-		else if (spannung != 0.0 && strom != 0.0){
-			rAusUundI(spannung, strom);
-		}
-		else if (leistung != 0.0 && strom != 0.0){
-			rAusPundI(leistung, strom);
-		}
-		else if (spannung != 0.0 && leistung != 0.0){
-			rAusUundP(spannung,leistung);
+		if (spannung != 0.0 && strom != 0.0) {
+			leistung = pAusUundI(spannung, strom);
+			widerstand = rAusUundI(spannung, strom);
 		}
 	}
 
