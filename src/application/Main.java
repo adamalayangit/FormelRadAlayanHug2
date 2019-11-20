@@ -84,6 +84,7 @@ public class Main extends Application {
 				double resistence = 0.0;
 				
 				txLeistung.setStyle("-fx-text-fill: red");
+				txSpannung.setStyle("-fx-text-fill: red");
 				
 				if(txLeistung.getText().isEmpty()==false) {
 					power = Double.parseDouble(txLeistung.getText());
@@ -91,6 +92,7 @@ public class Main extends Application {
 				}
 				if(txSpannung.getText().isEmpty()==false) {
 					tension = Double.parseDouble(txSpannung.getText());
+					txSpannung.setStyle("-fx-text-fill: black");
 				}
 				if(txStrom.getText().isEmpty()==false) {
 					current = Double.parseDouble(txStrom.getText());
