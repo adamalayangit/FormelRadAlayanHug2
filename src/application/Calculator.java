@@ -49,6 +49,11 @@ public class Calculator {
 			leistung = pAusUundI(spannung, strom);
 			widerstand = rAusUundI(spannung, strom);
 		}
+		
+		if (widerstand != 0.0 && strom != 0.0) {
+			leistung = pAusRundI(widerstand, strom);
+			spannung = uAusRundI(widerstand, strom);
+		}
 	}
 
 
