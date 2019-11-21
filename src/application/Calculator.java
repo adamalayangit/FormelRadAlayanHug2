@@ -74,7 +74,7 @@ public class Calculator {
                 System.out.println("-----------------------------------------------");
             }
 
-            if (widerstand != 0.0 && strom != 0.0) {
+            else if (widerstand != 0.0 && strom != 0.0) {
                 leistung = pAusRundI(widerstand, strom);
                 System.out.println("Leistung wird aus Widerstand und Strom berechnet");
                 System.out.println(widerstand+"*"+strom*strom+"="+leistung);
@@ -87,7 +87,7 @@ public class Calculator {
 
             }
 
-            if (spannung != 0.0 && widerstand != 0.0) {
+            else if (spannung != 0.0 && widerstand != 0.0) {
                 leistung = pAusUundR(spannung, widerstand);
                 System.out.println("Leistung wird aus Spannung und Widerstand berechnet");
                 System.out.println(spannung*spannung+"/"+widerstand+"="+leistung);
@@ -99,7 +99,7 @@ public class Calculator {
                 System.out.println("-----------------------------------------------");
             }
 
-            if (leistung != 0.0 && strom != 0.0) {
+            else if (leistung != 0.0 && strom != 0.0) {
                 spannung = uAusPundI(leistung, strom);
                 System.out.println("Spannung wird aus Leistung und Strom berechnet");
                 System.out.println(leistung+"/"+strom+"="+spannung);
@@ -111,7 +111,7 @@ public class Calculator {
                 System.out.println("-----------------------------------------------");
             }
 
-            if (leistung != 0.0 && widerstand != 0.0) {
+            else if (leistung != 0.0 && widerstand != 0.0) {
                 spannung = uAusPundR(leistung, widerstand);
                 System.out.println("Spannung wird aus Leistung und Widerstand berechnet");
                 System.out.println("Wurzel von "+leistung+"*"+widerstand+"="+spannung);
@@ -123,7 +123,7 @@ public class Calculator {
                 System.out.println("-----------------------------------------------");
             }
 
-            if (leistung != 0.0 && spannung != 0.0) {
+            else if (leistung != 0.0 && spannung != 0.0) {
                 strom = iAusPundU(leistung, spannung);
                 System.out.println("Strom wird aus Leistung und Spannung berechnet");
                 System.out.println(leistung+"/"+spannung+"="+strom);
