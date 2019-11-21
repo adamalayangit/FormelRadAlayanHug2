@@ -64,32 +64,75 @@ public class Calculator {
 
             if (spannung != 0.0 && strom != 0.0) {
                 leistung = pAusUundI(spannung, strom);
+                System.out.println("Leistung wird aus Spannung und Strom berechnet");
+                System.out.println(spannung+"*"+strom+"="+leistung);
+                System.out.println("-----------------------------------------------");
+
                 widerstand = rAusUundI(spannung, strom);
+                System.out.println("Widerstand wird aus Spannung und Strom berechnet");
+                System.out.println(spannung+"/"+strom+"="+widerstand);
+                System.out.println("-----------------------------------------------");
             }
 
             if (widerstand != 0.0 && strom != 0.0) {
                 leistung = pAusRundI(widerstand, strom);
+                System.out.println("Leistung wird aus Widerstand und Strom berechnet");
+                System.out.println(widerstand+"*"+strom*strom+"="+leistung);
+                System.out.println("-----------------------------------------------");
+
                 spannung = uAusRundI(widerstand, strom);
+                System.out.println("Spannung wird aus Widerstand und Strom berechnet");
+                System.out.println(widerstand+"*"+strom+"="+spannung);
+                System.out.println("-----------------------------------------------");
+
             }
 
             if (spannung != 0.0 && widerstand != 0.0) {
                 leistung = pAusUundR(spannung, widerstand);
+                System.out.println("Leistung wird aus Spannung und Widerstand berechnet");
+                System.out.println(spannung*spannung+"/"+widerstand+"="+leistung);
+                System.out.println("-----------------------------------------------");
+
                 strom = iAusUundR(spannung, widerstand);
+                System.out.println("Strom wird aus Spannung und Widerstand berechnet");
+                System.out.println(spannung+"/"+widerstand+"="+strom);
+                System.out.println("-----------------------------------------------");
             }
 
             if (leistung != 0.0 && strom != 0.0) {
                 spannung = uAusPundI(leistung, strom);
+                System.out.println("Spannung wird aus Leistung und Strom berechnet");
+                System.out.println(leistung+"/"+strom+"="+spannung);
+                System.out.println("-----------------------------------------------");
+
                 widerstand = rAusPundI(leistung, strom);
+                System.out.println("Widerstand wird aus Leistung und Strom berechnet");
+                System.out.println(leistung+"/"+strom*strom+"="+widerstand);
+                System.out.println("-----------------------------------------------");
             }
 
             if (leistung != 0.0 && widerstand != 0.0) {
                 spannung = uAusPundR(leistung, widerstand);
+                System.out.println("Spannung wird aus Leistung und Widerstand berechnet");
+                System.out.println("Wurzel von "+leistung+"*"+widerstand+"="+spannung);
+                System.out.println("-----------------------------------------------");
+
                 strom = iAusPundR(leistung, widerstand);
+                System.out.println("Strom wird aus Leistung und Widerstand berechnet");
+                System.out.println("Wurzel von "+leistung+"/"+widerstand+"="+strom);
+                System.out.println("-----------------------------------------------");
             }
 
             if (leistung != 0.0 && spannung != 0.0) {
                 strom = iAusPundU(leistung, spannung);
+                System.out.println("Strom wird aus Leistung und Spannung berechnet");
+                System.out.println(leistung+"/"+spannung+"="+strom);
+                System.out.println("-----------------------------------------------");
+
                 widerstand = rAusUundP(spannung, leistung);
+                System.out.println("Widerstand wird aus Spannung und Leistung berechnet");
+                System.out.println(spannung*spannung+"/"+leistung+"="+widerstand);
+                System.out.println("-----------------------------------------------");
             }
         }
     }
