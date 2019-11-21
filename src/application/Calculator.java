@@ -4,134 +4,137 @@ import javafx.scene.control.Alert;
 
 /**
  * Berechnet das Formelrad
+ *
  * @author Peter Rutschmann
  * @version 13.09.2018
  */
 public class Calculator {
-	private double leistung;
-	private double spannung;
-	private double strom;
-	private double widerstand;
-	
-	public Calculator(double leistung, double spannung, double strom, double widerstand) {
-		super();
-		this.leistung = leistung;
-		this.spannung = spannung;
-		this.strom = strom;
-		this.widerstand = widerstand;
-	}
-	
-	public double getLeistung() {
-		return leistung;
-	}
-	
-	public double getSpannung() {
-		return spannung;
-	}
+    private double leistung;
+    private double spannung;
+    private double strom;
+    private double widerstand;
 
-	public double getStrom() {
-		return strom;
-	}
+    public Calculator(double leistung, double spannung, double strom, double widerstand) {
+        super();
+        this.leistung = leistung;
+        this.spannung = spannung;
+        this.strom = strom;
+        this.widerstand = widerstand;
+    }
 
-	public double getWiderstand() {
-		return widerstand;
-	}
+    public double getLeistung() {
+        return leistung;
+    }
 
-	@Override
-	public String toString() {
-		return "Calculator [leistung=" + leistung + 
-				", spannung=" + spannung + 
-				", strom=" + strom + 
-				", widerstand="	+ widerstand + "]";
-	}
+    public double getSpannung() {
+        return spannung;
+    }
 
-	public void calculate() {
+    public double getStrom() {
+        return strom;
+    }
 
-		if ((widerstand != 0.0 && spannung != 0.0 && widerstand != 0.0)){
+    public double getWiderstand() {
+        return widerstand;
+    }
 
-		}else{
+    @Override
+    public String toString() {
+        return "Calculator [leistung=" + leistung +
+                ", spannung=" + spannung +
+                ", strom=" + strom +
+                ", widerstand=" + widerstand + "]";
+    }
 
-			if (spannung != 0.0 && strom != 0.0) {
-				leistung = pAusUundI(spannung, strom);
-				widerstand = rAusUundI(spannung, strom);
-			}
+    public void calculate() {
 
-			if (widerstand != 0.0 && strom != 0.0) {
-				leistung = pAusRundI(widerstand, strom);
-				spannung = uAusRundI(widerstand, strom);
-			}
-
-			if (spannung != 0.0 && widerstand != 0.0) {
-				leistung = pAusUundR(spannung, widerstand);
-				strom = iAusUundR(spannung, widerstand);
-			}
-
-			if (leistung != 0.0 && strom != 0.0) {
-				spannung = uAusPundI(leistung, strom);
-				widerstand = rAusPundI(leistung, strom);
-			}
-
-			if (leistung != 0.0 && widerstand != 0.0) {
-				spannung = uAusPundR(leistung, widerstand);
-				strom = iAusPundR(leistung, widerstand);
-			}
-
-			if (leistung != 0.0 && spannung != 0.0) {
-				strom = iAusPundU(leistung, spannung);
-				widerstand = rAusUundP(spannung, leistung);
-			}
-		}
-	}
+        if ((widerstand != 0.0 && strom != 0.0 && spannung != 0.0)
+                || (leistung != 0.0 && strom != 0.0 && widerstand != 0.0)){
 
 
-	public double pAusUundI(double u, double i) {
-		return u*i;
-	}
+        } else {
 
-	public double pAusRundI(double r, double i) {
-		return r*(i*i);
-	}
+            if (spannung != 0.0 && strom != 0.0) {
+                leistung = pAusUundI(spannung, strom);
+                widerstand = rAusUundI(spannung, strom);
+            }
 
-	public double pAusUundR(double u, double r) {
-		return (u*u)/r;
-	}
-	
-	
-	public double uAusRundI(double r, double i) {
-		return r*i;
-	}
-	
-	public double uAusPundI(double p, double i) {
-		return p/i;
-	}
-	
-	public double uAusPundR(double p, double r) {
-		return Math.sqrt(p*r);
-	}
-	
-	public double rAusUundI(double u, double i) {
-		return u/i;
-	}
-	
-	public double rAusPundI(double p, double i) {
-		return p/(i*i);
-	}
-	
-	public double rAusUundP(double u, double p) {
-		return (u*u)/p;
-	}
+            if (widerstand != 0.0 && strom != 0.0) {
+                leistung = pAusRundI(widerstand, strom);
+                spannung = uAusRundI(widerstand, strom);
+            }
+
+            if (spannung != 0.0 && widerstand != 0.0) {
+                leistung = pAusUundR(spannung, widerstand);
+                strom = iAusUundR(spannung, widerstand);
+            }
+
+            if (leistung != 0.0 && strom != 0.0) {
+                spannung = uAusPundI(leistung, strom);
+                widerstand = rAusPundI(leistung, strom);
+            }
+
+            if (leistung != 0.0 && widerstand != 0.0) {
+                spannung = uAusPundR(leistung, widerstand);
+                strom = iAusPundR(leistung, widerstand);
+            }
+
+            if (leistung != 0.0 && spannung != 0.0) {
+                strom = iAusPundU(leistung, spannung);
+                widerstand = rAusUundP(spannung, leistung);
+            }
+        }
+    }
 
 
-	public double iAusPundR(double p, double r) {
-		return Math.sqrt(p/r);
-	}
+    public double pAusUundI(double u, double i) {
+        return u * i;
+    }
 
-	public double iAusPundU(double p, double u) {
-		return p/u;
-	}
+    public double pAusRundI(double r, double i) {
+        return r * (i * i);
+    }
 
-	public double iAusUundR(double u, double r) {
-		return u/r;
-	}
+    public double pAusUundR(double u, double r) {
+        return (u * u) / r;
+    }
+
+
+    public double uAusRundI(double r, double i) {
+        return r * i;
+    }
+
+    public double uAusPundI(double p, double i) {
+        return p / i;
+    }
+
+    public double uAusPundR(double p, double r) {
+        return Math.sqrt(p * r);
+    }
+
+    public double rAusUundI(double u, double i) {
+        return u / i;
+    }
+
+    public double rAusPundI(double p, double i) {
+        return p / (i * i);
+    }
+
+    public double rAusUundP(double u, double p) {
+        return (u * u) / p;
+    }
+
+
+    public double iAusPundR(double p, double r) {
+        return Math.sqrt(p / r);
+    }
+
+    public double iAusPundU(double p, double u) {
+        return p / u;
+    }
+
+    public double iAusUundR(double u, double r) {
+        return u / r;
+    }
 
 }
