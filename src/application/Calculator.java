@@ -114,18 +114,25 @@ public class Calculator {
             if (leistung != 0.0 && widerstand != 0.0) {
                 spannung = uAusPundR(leistung, widerstand);
                 System.out.println("Spannung wird aus Leistung und Widerstand berechnet");
-                System.out.println("Wurzel von"+leistung+"*"+widerstand+"="+spannung);
+                System.out.println("Wurzel von "+leistung+"*"+widerstand+"="+spannung);
                 System.out.println("-----------------------------------------------");
 
                 strom = iAusPundR(leistung, widerstand);
                 System.out.println("Strom wird aus Leistung und Widerstand berechnet");
-                System.out.println("Wurzel von"+leistung+"/"+widerstand+"="+strom);
+                System.out.println("Wurzel von "+leistung+"/"+widerstand+"="+strom);
                 System.out.println("-----------------------------------------------");
             }
 
             if (leistung != 0.0 && spannung != 0.0) {
                 strom = iAusPundU(leistung, spannung);
+                System.out.println("Strom wird aus Leistung und Spannung berechnet");
+                System.out.println(leistung+"/"+spannung+"="+strom);
+                System.out.println("-----------------------------------------------");
+
                 widerstand = rAusUundP(spannung, leistung);
+                System.out.println("Widerstand wird aus Spannung und Leistung berechnet");
+                System.out.println(spannung*spannung+"/"+leistung+"="+widerstand);
+                System.out.println("-----------------------------------------------");
             }
         }
     }
