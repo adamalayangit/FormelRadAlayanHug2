@@ -50,7 +50,9 @@ public class Calculator {
 
         if ((widerstand != 0.0 && strom != 0.0 && spannung != 0.0)
                 || (leistung != 0.0 && strom != 0.0 && widerstand != 0.0)
-                || (spannung != 0.0 && leistung != 0.0 && widerstand != 0.0)){
+                || (spannung != 0.0 && leistung != 0.0 && widerstand != 0.0)
+                || (spannung != 0.0 && leistung != 0.0 && strom != 0.0)) {
+
 
         } else {
 
