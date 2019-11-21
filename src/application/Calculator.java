@@ -53,6 +53,12 @@ public class Calculator {
                 || (spannung != 0.0 && leistung != 0.0 && widerstand != 0.0)
                 || (spannung != 0.0 && leistung != 0.0 && strom != 0.0)) {
 
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Exception!!!!");
+            alert.setHeaderText(null);
+            alert.setContentText("Bitte geben Sie zwei Werte an!");
+
+            alert.showAndWait();
 
         } else {
 
