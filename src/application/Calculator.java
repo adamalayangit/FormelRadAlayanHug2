@@ -64,7 +64,14 @@ public class Calculator {
 
             if (spannung != 0.0 && strom != 0.0) {
                 leistung = pAusUundI(spannung, strom);
+                System.out.println("Leistung wird aus Spannung und Strom berechnet");
+                System.out.println(spannung+"*"+strom+"="+leistung);
+                System.out.println("-----------------------------------------------");
+
                 widerstand = rAusUundI(spannung, strom);
+                System.out.println("Widerstand wird aus Spannung und Strom berechnet");
+                System.out.println(spannung+"/"+strom+"="+widerstand);
+                System.out.println("-----------------------------------------------");
             }
 
             if (widerstand != 0.0 && strom != 0.0) {
