@@ -1,5 +1,7 @@
 package application;
 
+import javafx.scene.control.Alert;
+
 /**
  * Berechnet das Formelrad
  * @author Peter Rutschmann
@@ -45,34 +47,39 @@ public class Calculator {
 
 	public void calculate() {
 
-		if (spannung != 0.0 && strom != 0.0) {
-			leistung = pAusUundI(spannung, strom);
-			widerstand = rAusUundI(spannung, strom);
-		}
-		
-		if (widerstand != 0.0 && strom != 0.0) {
-			leistung = pAusRundI(widerstand, strom);
-			spannung = uAusRundI(widerstand, strom);
-		}
-		
-		if (spannung != 0.0 && widerstand != 0.0) {
-			leistung = pAusUundR(spannung, widerstand);
-			strom = iAusUundR(spannung, widerstand);
-		}
-		
-		if (leistung != 0.0 && strom != 0.0){
-			spannung = uAusPundI(leistung, strom);
-			widerstand = rAusPundI(leistung, strom);
-		}
-		
-		if (leistung != 0.0 && widerstand != 0.0){
-			spannung = uAusPundR(leistung, widerstand);
-			strom = iAusPundR(leistung, widerstand);
-		}
-		
-		if (leistung != 0.0 && spannung != 0.0){
-			strom = iAusPundU(leistung, spannung);
-			widerstand = rAusUundP(spannung, leistung);
+		if ((widerstand != 0.0 && spannung != 0.0 && widerstand != 0.0)){
+
+		}else{
+
+			if (spannung != 0.0 && strom != 0.0) {
+				leistung = pAusUundI(spannung, strom);
+				widerstand = rAusUundI(spannung, strom);
+			}
+
+			if (widerstand != 0.0 && strom != 0.0) {
+				leistung = pAusRundI(widerstand, strom);
+				spannung = uAusRundI(widerstand, strom);
+			}
+
+			if (spannung != 0.0 && widerstand != 0.0) {
+				leistung = pAusUundR(spannung, widerstand);
+				strom = iAusUundR(spannung, widerstand);
+			}
+
+			if (leistung != 0.0 && strom != 0.0) {
+				spannung = uAusPundI(leistung, strom);
+				widerstand = rAusPundI(leistung, strom);
+			}
+
+			if (leistung != 0.0 && widerstand != 0.0) {
+				spannung = uAusPundR(leistung, widerstand);
+				strom = iAusPundR(leistung, widerstand);
+			}
+
+			if (leistung != 0.0 && spannung != 0.0) {
+				strom = iAusPundU(leistung, spannung);
+				widerstand = rAusUundP(spannung, leistung);
+			}
 		}
 	}
 
